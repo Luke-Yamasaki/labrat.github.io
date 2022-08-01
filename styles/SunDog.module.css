@@ -1,0 +1,11 @@
+.front {
+    background-blend-mode: multiply;
+    position: absolute;
+    z-index: 2;
+}
+
+.blurBack {
+    filter: blur(50px);
+    position: absoulte;
+    z-index: 1;
+}

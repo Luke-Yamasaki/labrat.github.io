@@ -1,0 +1,23 @@
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.vectorBox {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spin 10s infinite linear;
+}
+
+.bg {
+    background-image: url('../public/download.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
