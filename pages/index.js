@@ -4,24 +4,27 @@ import styles from '../styles/Home.module.css';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [url, setUrl] = useState('');
+  const [audioUrl, setAudioUrl] = useState('');
+  const [videoUrl, setVideoUrl] = useState('');
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    setUrl("/music/surprise.mp3");
-    return
+    setAudioUrl("/music/surprise.mp3");
+    setVideoUrl("/videos/sunset.mp4")
+    return setLoaded(true);
   }, [])
 
-  return (
+  return loaded && (
     <div className={styles.main}>
       <Head>
         <title>WTF Lab Rat?</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <audio autoPlay loop src={url} />
+      <audio autoPlay loop src={audioUrl} />
       <div className={styles.videoContainer}>
         <video
           className={styles.video}
-          src={require('../public/videos/sunset.mp4')}
+          src={videoUrl}
           autoPlay
           loop
         />
